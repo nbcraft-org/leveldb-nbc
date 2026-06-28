@@ -16,6 +16,18 @@
 
 namespace leveldb {
 
+// NBCRAFT: fix building
+// TODO: solutions for other platforms
+#ifdef WIN32
+#if defined(_WIN64)
+    typedef int64_t ssize_t;
+#else
+    typedef int32_t ssize_t;
+#endif
+#else
+#error "Unsupported platform"
+#endif
+
 #if 0
 static void DumpInternalIter(Iterator* iter) {
   for (iter->SeekToFirst(); iter->Valid(); iter->Next()) {

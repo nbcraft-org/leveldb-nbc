@@ -2,7 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file. See the AUTHORS file for names of contributors.
 
-#ifdef MCPE_PLATFORM_WINDOWS_FAMILY
+//#ifdef MCPE_PLATFORM_WINDOWS_FAMILY
+// NBCRAFT: check for regular windows macro
+#ifdef WIN32
 
 #define VC_EXTRALEAN            // Exclude rarely-used stuff
 #define WIN32_LEAN_AND_MEAN     // Exclude rarely-used stuff from Windows headers
@@ -24,6 +26,12 @@
 #include <condition_variable>
 #include <thread>
 #include "Filepath.h"
+
+// NBCRAFT: fix for modern msvc
+// TODO: guard for msvc versions that need this
+#include <threads.h>
+#define _Thrd_t thrd_t
+#define _Thrd_create(thr, fun, arg) thrd_create(thr, fun, arg)
 
 #define MAX_FILENAME 512
 
