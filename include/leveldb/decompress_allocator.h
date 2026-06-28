@@ -8,7 +8,7 @@
 #include <string>
 
 namespace leveldb {
-	class DLLX DecompressAllocator {
+	class DecompressAllocator {
 	public:
 		virtual ~DecompressAllocator();
 

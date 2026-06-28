@@ -12,17 +12,17 @@
 
 namespace leveldb {
 
-class DLLX Cache;
-class DLLX Comparator;
-class DLLX Env;
-class DLLX FilterPolicy;
-class DLLX Logger;
-class DLLX Snapshot;
-class DLLX Compressor;
-class DLLX DecompressAllocator;
+class Cache;
+class Comparator;
+class Env;
+class FilterPolicy;
+class Logger;
+class Snapshot;
+class Compressor;
+class DecompressAllocator;
 
 // Options to control the behavior of a database (passed to DB::Open)
-struct DLLX Options {
+struct Options {
   // -------------------
   // Parameters that affect behavior
 
@@ -152,7 +152,7 @@ struct DLLX Options {
 };
 
 // Options that control read operations
-struct DLLX ReadOptions {
+struct ReadOptions {
   // If true, all data read from underlying storage will be
   // verified against corresponding checksums.
   // Default: false
@@ -183,7 +183,7 @@ struct DLLX ReadOptions {
 };
 
 // Options that control write operations
-struct DLLX WriteOptions {
+struct WriteOptions {
   // If true, the write will be flushed from the operating system
   // buffer cache (by calling WritableFile::Sync()) before the write
   // is considered complete.  If this flag is true, writes will be

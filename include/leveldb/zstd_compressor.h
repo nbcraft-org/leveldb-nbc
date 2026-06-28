@@ -5,7 +5,7 @@
 
 namespace leveldb {
 
-	class DLLX ZstdCompressor : public Compressor
+	class ZstdCompressor : public Compressor
 	{
 	public:
 		static const int SERIALIZE_ID = 3;

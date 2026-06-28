@@ -27,9 +27,9 @@
 
 namespace leveldb {
 
-class DLLX Slice;
+class Slice;
 
-class DLLX WriteBatch {
+class WriteBatch {
  public:
   WriteBatch();
   ~WriteBatch();
@@ -50,7 +50,7 @@ class DLLX WriteBatch {
   size_t ApproximateSize();
 
   // Support for iterating over the contents of a batch.
-  class DLLX Handler {
+  class Handler {
    public:
     virtual ~Handler();
     virtual void Put(const Slice& key, const Slice& value) = 0;

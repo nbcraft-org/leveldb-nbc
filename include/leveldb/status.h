@@ -18,7 +18,7 @@
 
 namespace leveldb {
 
-class DLLX Status {
+class Status {
  public:
 	 
   enum Code {

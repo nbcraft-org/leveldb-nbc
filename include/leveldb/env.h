@@ -21,14 +21,14 @@
 
 namespace leveldb {
 
-class DLLX FileLock;
-class DLLX Logger;
-class DLLX RandomAccessFile;
-class DLLX SequentialFile;
-class DLLX Slice;
-class DLLX WritableFile;
+class FileLock;
+class Logger;
+class RandomAccessFile;
+class SequentialFile;
+class Slice;
+class WritableFile;
 
-class DLLX Env {
+class Env {
  public:
   Env() { }
   virtual ~Env();
@@ -169,7 +169,7 @@ class DLLX Env {
 };
 
 // A file abstraction for reading sequentially through a file
-class DLLX SequentialFile {
+class SequentialFile {
  public:
   SequentialFile() { }
   virtual ~SequentialFile();
@@ -200,7 +200,7 @@ class DLLX SequentialFile {
 };
 
 // A file abstraction for randomly reading the contents of a file.
-class DLLX RandomAccessFile {
+class RandomAccessFile {
  public:
   RandomAccessFile() { }
   virtual ~RandomAccessFile();
@@ -226,7 +226,7 @@ class DLLX RandomAccessFile {
 // A file abstraction for sequential writing.  The implementation
 // must provide buffering since callers may append small fragments
 // at a time to the file.
-class DLLX WritableFile {
+class WritableFile {
  public:
   WritableFile() { }
   virtual ~WritableFile();
@@ -243,7 +243,7 @@ class DLLX WritableFile {
 };
 
 // An interface for writing log messages.
-class DLLX Logger {
+class Logger {
  public:
   Logger() { }
   virtual ~Logger();
@@ -259,7 +259,7 @@ class DLLX Logger {
 
 
 // Identifies a locked file.
-class DLLX FileLock {
+class FileLock {
  public:
   FileLock() { }
   virtual ~FileLock();
@@ -287,7 +287,7 @@ extern Status ReadFileToString(Env* env, const std::string& fname,
 // An implementation of Env that forwards all calls to another Env.
 // May be useful to clients who wish to override just part of the
 // functionality of another Env.
-class DLLX EnvWrapper : public Env {
+class EnvWrapper : public Env {
  public:
   // Initialize an EnvWrapper that delegates all calls to *t
   explicit EnvWrapper(Env* t) : target_(t) { }

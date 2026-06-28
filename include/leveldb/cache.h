@@ -23,13 +23,13 @@
 
 namespace leveldb {
 
-class DLLX Cache;
+class Cache;
 
 // Create a new cache with a fixed size capacity.  This implementation
 // of Cache uses a least-recently-used eviction policy.
-extern DLLX Cache* NewLRUCache(size_t capacity);
+extern Cache* NewLRUCache(size_t capacity);
 
-class DLLX Cache {
+class Cache {
  public:
   Cache() { }
 
@@ -38,7 +38,7 @@ class DLLX Cache {
   virtual ~Cache();
 
   // Opaque handle to an entry stored in the cache.
-  struct DLLX Handle { };
+  struct Handle { };
 
   // Insert a mapping from key->value into the cache and assign it
   // the specified charge against the total cache capacity.
@@ -97,7 +97,7 @@ class DLLX Cache {
   void LRU_Append(Handle* e);
   void Unref(Handle* e);
 
-  struct DLLX Rep;
+  struct Rep;
   Rep* rep_;
 
   // No copying allowed

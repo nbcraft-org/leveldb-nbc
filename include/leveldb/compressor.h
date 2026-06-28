@@ -7,9 +7,9 @@
 #include <memory>
 
 namespace leveldb {
-	class DLLX Slice;
+	class Slice;
 
-	class DLLX Compressor
+	class Compressor
 	{
 	public:
 

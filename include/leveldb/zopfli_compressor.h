@@ -5,7 +5,7 @@
 
 namespace leveldb {
 
-	class DLLX ZopfliCompressor : public Compressor 
+	class ZopfliCompressor : public Compressor 
 	{
 	public:
 		static const int SERIALIZE_ID = 2; //Same as ZLib since it is a replacement

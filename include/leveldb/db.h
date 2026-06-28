@@ -16,21 +16,21 @@ namespace leveldb {
 static const int kMajorVersion = 1;
 static const int kMinorVersion = 20;
 
-struct DLLX Options;
-struct DLLX ReadOptions;
-struct DLLX WriteOptions;
-class DLLX WriteBatch;
+struct Options;
+struct ReadOptions;
+struct WriteOptions;
+class WriteBatch;
 
 // Abstract handle to particular state of a DB.
 // A Snapshot is an immutable object and can therefore be safely
 // accessed from multiple threads without any external synchronization.
-class DLLX Snapshot {
+class Snapshot {
  protected:
   virtual ~Snapshot();
 };
 
 // A range of keys
-struct DLLX Range {
+struct Range {
   Slice start;          // Included in the range
   Slice limit;          // Not included in the range
 
@@ -41,7 +41,7 @@ struct DLLX Range {
 // A DB is a persistent ordered map from keys to values.
 // A DB is safe for concurrent access from multiple threads without
 // any external synchronization.
-class DLLX DB {
+class DB {
  public:
   // Open the database with the specified "name".
   // Stores a pointer to a heap-allocated database in *dbptr and returns
@@ -156,13 +156,13 @@ class DLLX DB {
 
 // Destroy the contents of the specified database.
 // Be very careful using this method.
-extern DLLX Status DestroyDB(const std::string& name, const Options& options);
+extern Status DestroyDB(const std::string& name, const Options& options);
 
 // If a DB cannot be opened, you may attempt to call this method to
 // resurrect as much of the contents of the database as possible.
 // Some data may be lost, so be careful when calling this function
 // on a database that contains important information.
-extern DLLX Status RepairDB(const std::string& dbname, const Options& options);
+extern Status RepairDB(const std::string& dbname, const Options& options);
 
 }  // namespace leveldb
 

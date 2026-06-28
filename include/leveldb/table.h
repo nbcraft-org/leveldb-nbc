@@ -10,18 +10,18 @@
 
 namespace leveldb {
 
-class DLLX Block;
-class DLLX BlockHandle;
-class DLLX Footer;
-struct DLLX Options;
-class DLLX RandomAccessFile;
-struct DLLX ReadOptions;
-class DLLX TableCache;
+class Block;
+class BlockHandle;
+class Footer;
+struct Options;
+class RandomAccessFile;
+struct ReadOptions;
+class TableCache;
 
 // A Table is a sorted map from strings to strings.  Tables are
 // immutable and persistent.  A Table may be safely accessed from
 // multiple threads without external synchronization.
-class DLLX Table {
+class Table {
  public:
   // Attempt to open the table that is stored in bytes [0..file_size)
   // of "file", and read the metadata entries necessary to allow
@@ -56,7 +56,7 @@ class DLLX Table {
   uint64_t ApproximateOffsetOf(const Slice& key) const;
 
  private:
-  struct DLLX Rep;
+  struct Rep;
   Rep* rep_;
 
   explicit Table(Rep* rep) { rep_ = rep; }
@@ -65,7 +65,7 @@ class DLLX Table {
   // Calls (*handle_result)(arg, ...) with the entry found after a call
   // to Seek(key).  May not make such a call if filter policy says
   // that key is not present.
-  friend class DLLX TableCache;
+  friend class TableCache;
   Status InternalGet(
       const ReadOptions&, const Slice& key,
       void* arg,
