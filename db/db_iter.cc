@@ -18,7 +18,7 @@ namespace leveldb {
 
 // NBCRAFT: fix building
 // TODO: solutions for other platforms
-#ifdef WIN32
+#ifdef _WIN32
 #if defined(_WIN64)
     typedef int64_t ssize_t;
 #else

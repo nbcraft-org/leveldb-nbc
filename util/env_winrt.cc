@@ -4,7 +4,7 @@
 
 //#ifdef MCPE_PLATFORM_WINDOWS_FAMILY
 // NBCRAFT: check for regular windows macro
-#ifdef WIN32
+#ifdef _WIN32
 
 #define VC_EXTRALEAN            // Exclude rarely-used stuff
 #define WIN32_LEAN_AND_MEAN     // Exclude rarely-used stuff from Windows headers
@@ -471,7 +471,7 @@ namespace leveldb {
 				return Status::OK();
 			}
 
-#ifndef WIN32
+#ifndef _WIN32
 			static uint64_t gettid() {
 				pthread_t tid = pthread_self();
 				uint64_t thread_id = 0;
